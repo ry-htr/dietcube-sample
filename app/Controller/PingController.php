@@ -7,10 +7,9 @@ class PingController extends Controller
 {
     public function index()
     {
+        /** @var \DietcubeSample\Service\PingService $service */
         $service = $this->get('service.ping');
 
-        return $this->render('ping', [
-            'time' => $service->getTime(),
-        ]);
+        return $this->json(['time' => $service->getTime()]);
     }
 }
