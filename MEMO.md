@@ -18,3 +18,4 @@ app\Application.phpに書くのか？
 return $this->json(['hoge' => 'huga']);
 ```
 を使用すればOK
+詳しいことは[こちら](https://github.com/mercari/dietcube/blob/master/src/Controller.php#L96)
