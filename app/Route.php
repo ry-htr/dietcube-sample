@@ -12,9 +12,13 @@ class Route implements RouteInterface
      */
     public function definition(Container $container)
     {
+        /*
+         * ここの書き方は
+         * [nikic/FastRoute](https://github.com/nikic/FastRoute)を参照
+         */
         return [
             ['GET', '/', 'Top::index'],
-            ['GET', '/ping', 'Ping::index'],
+            [['GET', 'POST'], '/ping', 'Ping::index'],
         ];
     }
 }
