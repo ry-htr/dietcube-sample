@@ -8,6 +8,7 @@ namespace DietcubeSample;
 use Dietcube\Application as DCApplication;
 use Pimple\Container;
 use DietcubeSample\Service\SampleService;
+use DietcubeSample\Service\PingService;
 
 class Application extends DCApplication
 {
@@ -24,6 +25,13 @@ class Application extends DCApplication
             $sample_service->setLogger($container['logger']);
 
             return $sample_service;
+        };
+
+        $container['service.ping'] = function () use ($container)  {
+            $ping_service = new PingService();
+            $ping_service->setLogger($container['logger']);
+
+            return $ping_service;
         };
     }
 }
