@@ -20,14 +20,14 @@ class Application extends DCApplication
     public function config(Container $container)
     {
         // setup container or services here
-        $container['service.sample'] = function () use ($container)  {
+        $container['service.sample'] = function () use ($container) {
             $sample_service = new SampleService();
             $sample_service->setLogger($container['logger']);
 
             return $sample_service;
         };
 
-        $container['service.ping'] = function () use ($container)  {
+        $container['service.ping'] = function () use ($container) {
             $ping_service = new PingService();
             $ping_service->setLogger($container['logger']);
 
